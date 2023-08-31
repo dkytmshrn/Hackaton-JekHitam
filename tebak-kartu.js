@@ -75,23 +75,25 @@ function up() {
     
     let cardImg = document.createElement("img");
     let cardRandom = deck.pop();
-    cardImg.src = "./images/" + cardRandom + ".png";
+    cardImg.src = "./images/" + cardRandom + ".png"
+    console.log(cardImg);
     yourSum = getValue(cardRandom);
     let x = document.getElementById("your-cards")
     x.append(cardImg.cloneNode(true))
-    console.log(cardImg)
     let y = document.getElementById("randcard")
-    y.append(cardImg.cloneNode(true))
-
+    y.src = "./images/" + cardRandom + ".png"
 }
 
 function down() {
     
     let cardImg = document.createElement("img");
     let cardRandom = deck.pop();
-    cardImg.src = "./images/" + cardRandom + ".png";
+    cardImg.src = "./images/" + cardRandom + ".png"
+    console.log(cardImg);
     yourSum = getValue(cardRandom);
-    document.getElementById("your-cards").append(cardImg)
-    document.getElementById("randcard").append(cardImg);
+    let x = document.getElementById("your-cards")
+    x.append(cardImg.cloneNode(true))
+    let y = document.getElementById("randcard")
+    y.src = "./images/" + cardRandom + ".png"
     
 }
