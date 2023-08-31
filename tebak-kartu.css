@@ -1,16 +1,11 @@
 body {
-    width: 100%;
+    width: 99%;
+    height: 99%;
     font-family: Arial, Helvetica, sans-serif;
     background-image: url("background.jpg");
     background-size: cover;
     background-repeat: no-repeat;
 }
-
-/* .main {
-    justify-content: center;
-    display: flex;
-    flex-direction: row;
-} */
 
 h2 {
     color: white;
@@ -19,64 +14,62 @@ h2 {
 }
 
 .logo {
-    width: 50%;
+    width: 33%;
 }
 
 #logo {
-    height: 250px;
-    width: 400px;
-}
-
-.info {
-    padding: 20px;
+    height: 70%;
+    align-items: center;
+    width: 80%;
 }
 
 .box {
-    width: 50%;
-    height: 600px;
+    width: 33%;
+    height: 100%;
     text-align: center;
 }
 
 #username {
-    font-size: 40px ;
+    font-family: piratesWord;
+    font-size: 30px ;
     color: white;
-    margin-right: 100px;
+    background-color: rgba(0, 0, 0, 0.795);
+    opacity: 0.7;
 }
 
 #score {
+    background-color: rgba(0, 0, 0, 0.795);
+    opacity: 0.7;
+    font-size: 30px;
+    font-family: piratesWord;
+    color: rgb(34, 179, 14);
+    margin-top: 20px;
+}
+
+#results {
+    font-family: piratesWord;
     font-size: 40px;
     color: white;
     margin-top: 20px;
 }
 
-#results {
-    font-size: 50px;
-    color: white;
-    margin-top: 20px;
-}
-
 .game {
-    width: 40%;
+    /* background-color: #F2994A; */
+    width: 100%;
     font-size: 25px;
     text-align: center;
     justify-content: center;
 }
 
-.bottom {
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-}
-
-#dealer-cards img {
-    height: 200px;
-    width: 145px;
+#deck-cards img {
+    height: 180px;
+    width: 126px;
     margin: 0 10px;
 }
 
 #your-cards img {
-    height: 250px;
-    width: 175px;
+    height: 180px;
+    width: 126px;
     margin: 0 20px;
     box-shadow: 0 0 20px #000000;
 }
@@ -87,6 +80,7 @@ button {
     height: 80px;
     font-size: 30px;
     margin: 10px;
+    margin-top: 20px;
     background-image: linear-gradient(to right, #F2994A 0%, #F2C94C  51%, #F2994A  100%);
     border-radius: 10px;
     box-shadow: 0 0 20px #000000;
@@ -95,35 +89,23 @@ button {
 
 #reset {
     justify-content: center;
-    width: 200px;
-    height: 100px;
-    font-size: 40px;
-    margin: 10px;
-    background-image: linear-gradient(to right, #F2994A 0%, #F2C94C  51%, #F2994A  100%);
-    border-radius: 10px;
-    box-shadow: 0 0 20px #000000;
-    cursor: pointer;
-    margin-left: 40%;
-}
-
-.buttons {
-    margin-top: 20px;
+    align-items: center;
+    align-content: center;
 }
 
 .header {
-    background-color: #000000a2;
+   
     justify-content: space-between;
     width: 100%;
+    height: 50%;
     display: flex;
-    /* flex-direction: row; */
-    /* position: relative; */
 }
 
 .container {
     display: flex;
+    width: 34%;
     flex-direction: column;
     align-items: center;
-    /* position: relative; */
     top: -200px
 }
 
@@ -131,6 +113,11 @@ button {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* position: relative; */
     top: -150px
 }
+
+@font-face {
+    font-family: piratesWord;
+    src: url(Font\Skullsandcrossbones-RppKM.ttf);
+}
+  
