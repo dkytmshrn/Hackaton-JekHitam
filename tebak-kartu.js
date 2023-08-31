@@ -5,16 +5,21 @@ let live = 1
 let totalPoint = 0
 let button = true
 
-window.onload = function() {
+window.onload = function () {
     buildDeck();
     shuffleDeck();
     startGame();
+    var name = prompt("Masukan nama kamu", "");
+    if (name != null && name != "") {
+      playerName = name;
+    }
+    document.getElementById("username").innerHTML += playerName
 }
 
 function userName(name) {
     let result = {
-        name : name,
-        live : 3,
+        name: name,
+        live: 3,
     }
     return result
 }
@@ -43,7 +48,7 @@ function shuffleDeck() {
 }
 
 function startGame() {
-    
+
     let cardImage = document.createElement("img")
     let cardRandom = deck.pop()
     cardImage.src = "./images/" + cardRandom + ".png"
@@ -54,6 +59,22 @@ function startGame() {
     document.getElementById("up").addEventListener("click", up)
     document.getElementById("down").addEventListener("click", down)
 }
+
+function resetGame() {
+    // Diclear keadaan gamenya, hilang kartu dan score
+}
+
+function reset() {
+    document.getElementById("reset").addEventListener("click", function () {
+        resetGame();
+        buildDeck();
+        shuffleDeck();
+        startGame();
+        console.log('RESET');
+    }
+    )
+}
+
 
 function getValue(card) {
     let data = card.split("-")
@@ -88,25 +109,32 @@ function up() {
     let y = document.getElementById("randcard")
     y.src = "./images/" + cardRandom + ".png"
 
-    if (cardNow>cardBefore) {
+    if (cardNow > cardBefore) {
         totalPoint += 1000
+        document.getElementById("score").innerHTML = `Score: ${totalPoint}`
     }
     else {
         live--
     }
-    
+
     if (live === 0) {
         button = false
-        message = `YOU DIE`
+        message = `KAMU KALAH`
         document.getElementById("results").innerText = message;
+        document.getElementById("reset").style.display = 'block'
+        document.getElementById("buttons").style.display = 'none'
     }
-    
+
     cardBefore = cardNow
 
     if (totalPoint === 5000) {
-        message = `YOU CAN RUN NOW FOO`
+        message = `SELAMAT KAMU MENANG`
         document.getElementById("results").innerText = message;
+        document.getElementById("score").innerHTML = `Score: ${totalPoint}`
+        document.getElementById("reset").style.display = 'block'
+        document.getElementById("buttons").style.display = 'none'
     }
+    reset()
 }
 
 function down() {
@@ -124,23 +152,30 @@ function down() {
     let y = document.getElementById("randcard")
     y.src = "./images/" + cardRandom + ".png"
 
-    if (cardNow<cardBefore) {
+    if (cardNow < cardBefore) {
         totalPoint += 1000
+        document.getElementById("score").innerHTML = `Score: ${totalPoint}`
     }
     else {
         live--
     }
-    
+
     if (live === 0) {
         button = false
-        message = `YOU DIE`
+        message = `KAMU KALAH`
         document.getElementById("results").innerText = message;
+        document.getElementById("reset").style.display = 'block'
+        document.getElementById("buttons").style.display = 'none'
     }
 
     cardBefore = cardNow
 
     if (totalPoint === 5000) {
-        message = `YOU CAN RUN NOW FOO`
+        message = `SELAMAT KAMU MENANG`
         document.getElementById("results").innerText = message;
+        document.getElementById("score").innerHTML = `Score: ${totalPoint}`
+        document.getElementById("reset").style.display = 'block'
+        document.getElementById("buttons").style.display = 'none'
     }
+    reset()
 }

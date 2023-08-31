@@ -1,25 +1,48 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Black Jack</title>
-        <link rel="stylesheet" href="tebak-kartu.css">
-        <script src="tebak-kartu.js"></script>
-    </head>
+<audio autoplay loop id="bgm">
+    <source src="bgm.mp3" type="audio/mp3">
+</audio>
+<script>
+    let audio = document.getElementById("bgm");
+    audio.volume = 0;
+</script>
 
-    <body>
-        <h2>DECK<span id="dealer-sum"></span></h2>
-        <div id="dealer-cards">
-            <img id="hidden" src="./images/BACK.png"><img id="randcard"></img>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Tebak Kartu</title>
+    <link rel="stylesheet" href="tebak-kartu.css">
+    <script src="tebak-kartu.js"></script>
+</head>
+
+<body>
+    <div class="main">
+        <div class="Header">
+            <img id="logo" src="LOGO.png"></img>
         </div>
+        <div class="game">
+            <h2><span id="dealer-sum">Kartu berikutnya:</span></h2>
+            <div id="dealer-cards">
+                <img id="hidden" src="./images/BACK.png"><img id="randcard"></img>
+            </div>
+            <h2>Kartu mu: <span id="your-sum"></span></h2>
+            <div id="your-cards"></div>
 
-        <h2>You: <span id="your-sum"></span></h2>
-        <div id="your-cards"></div>
+            <div class="buttons" id="buttons">
+                <button id="up">Up</button>
+                <button id="down">Down</button>
+            </div>
+            <button id="reset" style="display: none">Reset</button>
+        </div>
+        <div class="info">
+            <div class="box">
+                <div id="username">Nama: </div>
+                <div id="score">Score: </div>
+                <div id="results"></div>
+            </div>
+        </div>
+    </div>
+</body>
 
-        <br>
-        <button id="up">Up</button>
-        <button id="down">Down</button>
-        <p id="results"></p>
-    </body>
 </html>
