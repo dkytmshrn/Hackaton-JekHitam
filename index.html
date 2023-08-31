@@ -18,16 +18,38 @@
 
 <body>
     <div class="main">
-        <div class="Header">
-            <img id="logo" src="LOGO.png"></img>
+        <div class="header">
+            <div class="logo">
+                <img id="logo" src="LOGO.png"></img>
+            </div>
+            <div class="box">
+                
+                <div id="username">Nama: 
+                <br>
+                </div>
+                <div id="score">Score: </div>
+                <div id="results"></div>
+            </div>   
+            
         </div>
-        <div class="game">
+        <div class="container">
             <h2><span id="dealer-sum">Kartu berikutnya:</span></h2>
             <div id="dealer-cards">
                 <img id="hidden" src="./images/BACK.png"><img id="randcard"></img>
             </div>
+            
+        </div>
+        <div class="container1">
             <h2>Kartu mu: <span id="your-sum"></span></h2>
             <div id="your-cards"></div>
+        </div>
+        <div class="game">
+            <!-- <h2><span id="dealer-sum">Kartu berikutnya:</span></h2>
+            <div id="dealer-cards">
+                <img id="hidden" src="./images/BACK.png"><img id="randcard"></img>
+            </div> -->
+            <!-- <h2>Kartu mu: <span id="your-sum"></span></h2>
+            <div id="your-cards"></div> -->
 
             <div class="buttons" id="buttons">
                 <button id="up">Up</button>
@@ -36,13 +58,14 @@
             <button id="reset" style="display: none">Reset</button>
         </div>
         <div class="info">
-            <div class="box">
+            <!-- <div class="box">
                 <div id="username">Nama: </div>
                 <div id="score">Score: </div>
                 <div id="results"></div>
-            </div>
+            </div> -->
         </div>
     </div>
+    
 </body>
 
 </html>
