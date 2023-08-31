@@ -1,6 +1,9 @@
 let deck
 let cardBefore = 0
 let cardNow = 0
+let live = 1
+let totalPoint = 0
+let button = true
 
 window.onload = function() {
     buildDeck();
@@ -72,28 +75,72 @@ function getValue(card) {
 }
 
 function up() {
-    
-    let cardImg = document.createElement("img");
-    let cardRandom = deck.pop();
+    if (!button) {
+        return
+    }
+
+    let cardImg = document.createElement("img")
+    let cardRandom = deck.pop()
     cardImg.src = "./images/" + cardRandom + ".png"
-    console.log(cardImg);
-    yourSum = getValue(cardRandom);
+    cardNow = getValue(cardRandom)
     let x = document.getElementById("your-cards")
     x.append(cardImg.cloneNode(true))
     let y = document.getElementById("randcard")
     y.src = "./images/" + cardRandom + ".png"
+
+    if (cardNow>cardBefore) {
+        totalPoint += 1000
+    }
+    else {
+        live--
+    }
+    
+    if (live === 0) {
+        button = false
+        message = `YOU DIE`
+        document.getElementById("results").innerText = message;
+    }
+    
+    cardBefore = cardNow
+
+    if (totalPoint === 5000) {
+        message = `YOU CAN RUN NOW FOO`
+        document.getElementById("results").innerText = message;
+    }
 }
 
 function down() {
-    
-    let cardImg = document.createElement("img");
-    let cardRandom = deck.pop();
+    if (!button) {
+        return
+    }
+    let message = ''
+
+    let cardImg = document.createElement("img")
+    let cardRandom = deck.pop()
     cardImg.src = "./images/" + cardRandom + ".png"
-    console.log(cardImg);
-    yourSum = getValue(cardRandom);
+    cardNow = getValue(cardRandom)
     let x = document.getElementById("your-cards")
     x.append(cardImg.cloneNode(true))
     let y = document.getElementById("randcard")
     y.src = "./images/" + cardRandom + ".png"
+
+    if (cardNow<cardBefore) {
+        totalPoint += 1000
+    }
+    else {
+        live--
+    }
     
+    if (live === 0) {
+        button = false
+        message = `YOU DIE`
+        document.getElementById("results").innerText = message;
+    }
+
+    cardBefore = cardNow
+
+    if (totalPoint === 5000) {
+        message = `YOU CAN RUN NOW FOO`
+        document.getElementById("results").innerText = message;
+    }
 }
