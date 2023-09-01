@@ -1,7 +1,12 @@
+@font-face {
+    font-family: 'piratesWord';
+    src: url(Font/Skullsandcrossbones-RppKM.ttf)
+}
+
 body {
     width: 99%;
     height: 99%;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: piratesWord;
     background-image: url("background2.jpg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -33,24 +38,27 @@ h2 {
     font-family: piratesWord;
     font-size: 30px ;
     color: white;
-    background-color: rgba(0, 0, 0, 0.795);
-    opacity: 0.7;
+    text-shadow: 2px 2px black;
+    /* background-color: rgba(0, 0, 0, 0.795);
+    opacity: 0.7; */
 }
 
 #score {
-    background-color: rgba(0, 0, 0, 0.795);
-    opacity: 0.7;
-    font-size: 30px;
     font-family: piratesWord;
+    text-shadow: 2px 2px black;
+    /* background-color: rgba(0, 0, 0, 0.795);
+    opacity: 0.7; */
+    font-size: 30px;
     color: rgb(34, 179, 14);
     margin-top: 20px;
 }
 
 #results {
     font-family: piratesWord;
-    background-color: rgba(97, 18, 18, 0.795);
-    opacity: 0.7;
-    font-size: 40px;
+    text-shadow: 2px 2px black;
+    /* background-color: rgba(97, 18, 18, 0.795);
+    opacity: 0.7; */
+    font-size: 35px;
     color: white;
     margin-top: 20px;
 }
@@ -104,22 +112,22 @@ button {
 }
 
 .container {
+    text-shadow: 2px 2px black;
+    font-size: 17px;
     display: flex;
     width: 34%;
     flex-direction: column;
     align-items: center;
-    top: -200px
+    top: -250px
+    
 }
 
 .container1 {
+    text-shadow: 2px 2px black;
     display: flex;
     flex-direction: column;
     align-items: center;
     top: -150px
 }
 
-@font-face {
-    font-family: piratesWord;
-    src: url(Font\Skullsandcrossbones-RppKM.ttf);
-}
   
