@@ -20,6 +20,11 @@ h2 {
 
 .logo {
     width: 33%;
+    text-shadow: 2px 2px black;
+    text-align: center;
+    font-family: piratesWord;
+    font-size: 90px;
+    color : white
 }
 
 #logo {
